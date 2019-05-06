@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Spesifikasi buku -->
+        <record id="product_template_spesifikasi_buku" model="ir.ui.view">
+            <field name="name">product.template.spesifikasi.buku</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='notes']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <page name="spesifikasi buku" string="Spesifikasi">
+                        <group>
+                            <group>
+                                <field name="x_kategori"/>
+                                <field name="x_jenis"/>
+                                <field name="x_mapel"/>
+                                <field name="x_kelas"/>
+                                <field name="x_peruntukan"/>
+                                <field name="x_jenjang"/>
+                                <field name="x_penulis"/>
+                                <field name="x_penerbit"/>
+                                <field name="x_tahun_cetak"/>
+                            </group>
+                            <group name="spesifikasi_buku_2">
+                                <field name="x_total_hal"/>
+                                <field name="x_ukuran"/>
+                                <field name="x_warna"/>
+                                <field name="x_bahan_cover"/>
+                                <field name="x_kertas_isi"/>
+                                <field name="x_finishing"/>
+                                <field name="x_isbn"/>
+                                <field name="x_no_sk"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="product_template_spesifikasi_buku_tree" model="ir.ui.view">
+            <field name="name">product.template.spesifikasi.buku.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='standard_price']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="x_penerbit"/>
+                    <field name="x_jenis"/>
+                </xpath>
+                <xpath expr="//field[@name='categ_id']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="x_total_hal"/>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="x_jenjang"/>
+                    <field name="x_kelas"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

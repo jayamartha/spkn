@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_oppor_prospek" model="ir.ui.view">
+            <field name="name">crm.lead.prospek</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='country_id']" position="replace">
+                    <!-- Add new fields here -->
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
